@@ -1,0 +1,186 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Battery %@" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "电量 %@" } }
+      }
+    },
+    "Cancelled." : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已取消。" } }
+      }
+    },
+    "Closed-lid support: not set up" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "合盖运行支持：未设置" } }
+      }
+    },
+    "Closed-lid support: ready" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "合盖运行支持：已就绪" } }
+      }
+    },
+    "Couldn't change Launch at Login: %@" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法更改登录时启动：%@" } }
+      }
+    },
+    "Couldn't remove closed-lid support: %@" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法移除合盖运行支持：%@" } }
+      }
+    },
+    "Couldn't set up closed-lid support: %@" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法设置合盖运行支持：%@" } }
+      }
+    },
+    "Displays stay on with the lid closed until closed-lid support is set up." : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置合盖运行支持之前，合盖时屏幕会保持亮着。" } }
+      }
+    },
+    "Ember is off" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Ember 已关闭" } }
+      }
+    },
+    "Ember needs your password once so it can keep your Mac running with the lid closed." : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Ember 需要你输入一次密码，以便在合盖时让 Mac 继续运行。" } }
+      }
+    },
+    "Ember needs your password to remove its closed-lid permission." : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Ember 需要你的密码来移除合盖运行权限。" } }
+      }
+    },
+    "Enable Ember" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "启用 Ember" } }
+      }
+    },
+    "External displays: %lld" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "外接显示器 %lld 台" } }
+      }
+    },
+    "Keep display on" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "屏幕常亮" } }
+      }
+    },
+    "Keep Mac awake" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保持 Mac 运行" } }
+      }
+    },
+    "Keep running with lid closed" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "合盖后继续运行" } }
+      }
+    },
+    "Keeping your Mac awake" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在保持 Mac 运行" } }
+      }
+    },
+    "Launch at Login" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "登录时启动" } }
+      }
+    },
+    "Lid closed" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "盖子合上" } }
+      }
+    },
+    "Lid open" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "盖子打开" } }
+      }
+    },
+    "Needed to turn displays off with the lid closed, and to keep running without an external display." : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "合盖时关闭屏幕、没接外接显示器时合盖继续运行，都需要它。" } }
+      }
+    },
+    "No external display" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无外接显示器" } }
+      }
+    },
+    "Off" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "关闭" } }
+      }
+    },
+    "On battery" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "用电池" } }
+      }
+    },
+    "On power" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "接电源" } }
+      }
+    },
+    "Quit Ember" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "退出 Ember" } }
+      }
+    },
+    "Remove Closed-Lid Support…" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "移除合盖运行支持…" } }
+      }
+    },
+    "Set Up Closed-Lid Support…" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置合盖运行支持…" } }
+      }
+    },
+    "Sleeping normally" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正常休眠中" } }
+      }
+    },
+    "Stop on Battery Below" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "电量低于此值时停止" } }
+      }
+    },
+    "Stopped: battery below %@" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已停止：电量低于 %@" } }
+      }
+    },
+    "Turn displays off when lid closes" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "合盖时关闭屏幕" } }
+      }
+    },
+    "Turn Displays Off Now" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "立即关闭屏幕" } }
+      }
+    },
+    "Unknown error." : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "未知错误。" } }
+      }
+    },
+    "When on Battery" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "用电池时" } }
+      }
+    },
+    "When on Power" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "接电源时" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}
