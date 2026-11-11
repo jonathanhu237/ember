@@ -1,6 +1,5 @@
 # Ember
 
-[![CI](https://github.com/jonathanhu237/ember/actions/workflows/ci.yml/badge.svg)](https://github.com/jonathanhu237/ember/actions/workflows/ci.yml)
 ![macOS 14+](https://img.shields.io/badge/macOS-14%2B-black)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
