@@ -60,7 +60,12 @@ public enum Policy {
     ) -> PowerDecision {
         var decision = decision
         let wasRunningWithLidClosed = previousDecision?.disableLidSleep ?? false
-        decision.sleepSystemNow = now.isLidClosed && wasRunningWithLidClosed && !decision.disableLidSleep
+        // The flag can also be on without this session having asked for it, for example
+        // restored by macOS after a restart. If nothing wants the Mac kept up, sleep once the
+        // app has turned the flag off, rather than waiting for the lid to be opened and closed.
+        let strayFlag = now.isLidSleepDisabled && !decision.preventIdleSystemSleep
+        decision.sleepSystemNow = now.isLidClosed && !decision.disableLidSleep
+            && (wasRunningWithLidClosed || strayFlag)
         if decision.sleepSystemNow {
             decision.darkenDisplaysNow = false
         }

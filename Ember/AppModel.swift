@@ -120,19 +120,33 @@ final class AppModel {
         }
     }
 
-    /// Turn `pmset disablesleep` on or off. Only ever turns off a flag Ember itself turned on.
+    /// Keep `pmset disablesleep` in line with the policy. See `LidSleepFlag` for why Ember owns
+    /// the flag outright while closed-lid support is installed.
     private func applyLidSleepFlag(wanted: Bool) {
-        let isDisabled = SystemReader.isLidSleepDisabled()
-        if wanted {
-            guard !isDisabled, closedLidSupportReady else { return }
+        let action = LidSleepFlag.action(
+            wanted: wanted,
+            isDisabled: SystemReader.isLidSleepDisabled(),
+            ownsFlag: ClosedLidSupport.ownsLidSleepFlag,
+            supportInstalled: closedLidSupportReady
+        )
+        switch action {
+        case .none:
+            break
+        case .claim:
+            ClosedLidSupport.setOwnsLidSleepFlag(true)
+        case .forget:
+            ClosedLidSupport.setOwnsLidSleepFlag(false)
+        case .turnOn:
             if Shell.setLidSleepDisabled(true) {
                 ClosedLidSupport.setOwnsLidSleepFlag(true)
             } else {
                 closedLidSupportReady = ClosedLidSupport.isInstalled()
             }
-        } else if ClosedLidSupport.ownsLidSleepFlag {
-            if !isDisabled || Shell.setLidSleepDisabled(false) {
+        case .turnOff:
+            if Shell.setLidSleepDisabled(false) {
                 ClosedLidSupport.setOwnsLidSleepFlag(false)
+            } else {
+                closedLidSupportReady = ClosedLidSupport.isInstalled()
             }
         }
     }

@@ -83,8 +83,20 @@ struct DefaultSettingsTests {
 
     @Test("On battery: behave like a normal laptop")
     func onBattery() {
-        let d = decide(snapshot(power: .battery, lidClosed: true))
+        let d = decide(snapshot(power: .battery, lidClosed: true, lidSleepDisabled: false))
         #expect(d == .inactive)
+    }
+
+    // Regression: after a restart macOS restored `disablesleep 1` while Ember no longer
+    // considered the flag its own, so a closed Mac on battery stayed awake in a bag.
+    @Test("Flag left on (e.g. after a restart), on battery with the lid closed: turn it off and sleep")
+    func strayFlagOnBatteryLidClosed() {
+        let now = snapshot(power: .battery, lidClosed: true, displaysAsleep: true, lidSleepDisabled: true)
+        let steady = decide(snapshot(power: .battery, lidSleepDisabled: true))
+        let d = decide(now, previous: now, previousDecision: steady)
+        #expect(!d.disableLidSleep)
+        #expect(!d.preventIdleSystemSleep)
+        #expect(d.sleepSystemNow)
     }
 
     @Test("Unplugged with the lid closed (into the bag): release everything and sleep now")
@@ -157,6 +169,17 @@ struct CustomSettingsTests {
         let d = decide(closed, settings: settings, previous: closed, previousDecision: previous)
         #expect(!d.isKeepingAwake)
         #expect(d.sleepSystemNow)
+    }
+
+    @Test("Stray flag while Ember keeps the Mac awake (clamshell at a desk): do not force sleep")
+    func strayFlagWhileKeepingAwake() {
+        var settings = EmberSettings.default
+        settings.onPower.runWithLidClosed = false
+        let now = snapshot(lidClosed: true, lidSleepDisabled: true)
+        let d = decide(now, settings: settings, previous: now, previousDecision: decide(now, settings: settings))
+        #expect(!d.disableLidSleep)
+        #expect(d.preventIdleSystemSleep)
+        #expect(!d.sleepSystemNow)
     }
 
     @Test("Clamshell desk mode: lid closed, darkening off, keep display on stays honoured")

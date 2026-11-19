@@ -53,7 +53,7 @@ Until it is set up, Ember keeps an external display awake while the lid is close
 - `/etc/sudoers.d/ember-<uid>`: lets your user run exactly `pmset -a disablesleep 0` and `pmset -a disablesleep 1` without a password, and nothing else. It is checked with `visudo` before it is installed.
 - `~/Library/LaunchAgents/dev.ember.watchdog.plist`: a user-level job that runs every 30 seconds. If Ember is no longer running while it had the flag on, the job turns the flag back off, so a crash never leaves the Mac unable to sleep.
 
-Ember turns the flag on only while a profile asks for it and turns it off as soon as that stops (for example when you unplug). It never resets a flag that another tool set. **Remove Closed-Lid Support…** undoes all of it.
+While closed-lid support is installed, Ember owns this flag. It turns the flag on only while a profile asks for it, and turns it off as soon as that stops (for example when you unplug), even if something else left it on, such as macOS restoring it after a restart. If the lid is already closed at that point, Ember puts the Mac to sleep. **Remove Closed-Lid Support…** undoes all of it.
 
 If something ever goes wrong, this restores normal sleep:
 

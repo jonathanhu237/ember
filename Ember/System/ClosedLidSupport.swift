@@ -85,7 +85,7 @@ enum ClosedLidSupport {
     }
 
     static func uninstall() throws {
-        if ownsLidSleepFlag, SystemReader.isLidSleepDisabled() {
+        if ownsLidSleepFlag || SystemReader.isLidSleepDisabled() {
             _ = Shell.setLidSleepDisabled(false)
         }
         setOwnsLidSleepFlag(false)
